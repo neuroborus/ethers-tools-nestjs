@@ -1,0 +1,58 @@
+{
+  "name": "ethers-tools-nestjs",
+  "version": "0.1.0",
+  "description": "NestJS wrapper for ethers-tools. Contains tools for work with EVM contracts.",
+  "main": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --config vitest.config.js",
+    "format": "npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neuroborus/ethers-tools.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": {
+    "name": "neuroborus"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0",
+    "ethers-tools": "^2.3.7"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "prettier": "^3.5.3",
+    "vitest": "^3.0.6"
+  },
+  "keywords": [
+    "nestjs",
+    "nest",
+    "ethers",
+    "ethers.js",
+    "ethereum",
+    "smart contract",
+    "multicall",
+    "blockchain",
+    "web3",
+    "contract interaction",
+    "contract call",
+    "contract utils",
+    "jsonrpc",
+    "rpc provider",
+    "multicall contract",
+    "ethers contract",
+    "abi",
+    "decode data",
+    "contract execution",
+    "dapp development",
+    "typescript",
+    "javascript",
+    "node",
+    "jsdoc"
+  ]
+}
