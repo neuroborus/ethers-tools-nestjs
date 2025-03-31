@@ -12,19 +12,24 @@ JSDoc is provided.
 
 ### Installation
 
-First, you will need **ethers** v6 *and* **ethers-tools**:
+First, you will need **ethers** v6 _and_ **ethers-tools**:
+
 ```shell
 npm i ethers
 npm i ethers-tools
 npm i ethers-tools-nestjs
 ```
+
 or
+
 ```shell
 yarn add ethers
 yarn add ethers-tools
 yarn add ethers-tools-nestjs
 ```
+
 or
+
 ```shell
 pnpm add ethers
 pnpm add ethers-tools
@@ -35,8 +40,7 @@ pnpm add ethers-tools-nestjs
 
 ## ✨ Features
 
-- 🧩 `@Contract` decorator to turn a class into an `ethers-tools` **Contract** instance
+- 🧩 `@Contract` decorator to turn a class into an `ethers-tools` **Contract** instance & *ContractFactory*
 - ⚡ `MulticallModule` with `MulticallUnitService` for performing efficient batch calls
 - ✅ NestJS-compatible and fully DI-friendly
 - 💡 Works with either global or per-module configuration
-

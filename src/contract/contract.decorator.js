@@ -3,7 +3,7 @@ import { Contract as EthersToolsContract } from 'ethers-tools';
 /**
  * @param {import('ethers').Interface | import('ethers').InterfaceAbi} abi
  * @param {string} [address]
- * @param {import('ethers').Provider | import('ethers').Signer | undefined} [driver]
+ * @param {import('ethers').Signer | import('ethers').Provider | undefined} [driver]
  * @param {import('ethers-tools').ContractOptions} [options]
  * @returns {import('@nestjs/common').ClassDecorator}
  */

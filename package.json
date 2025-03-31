@@ -1,6 +1,6 @@
 {
   "name": "ethers-tools-nestjs",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "NestJS wrapper for ethers-tools. Contains tools for work with EVM contracts.",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",
@@ -22,7 +22,8 @@
   "license": "MIT",
   "peerDependencies": {
     "@nestjs/common": "^11.0.0",
-    "ethers-tools": "^2.3.7"
+    "ethers-tools": "^2.4.7",
+    "ethers": "^6.0.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",

@@ -1,6 +1,6 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import { MulticallUnitService } from './multicall-unit.service.js';
-import { createMulticallProviders } from './create-multicall-providers.js';
+import { MULTICALL_UNIT_PARAMS_DI_TOKEN } from '../di-tokens.js';
 
 @Module({})
 export class MulticallModule {
@@ -14,7 +14,22 @@ export class MulticallModule {
     return {
       global: true,
       module: MulticallModule,
-      providers: createMulticallProviders(driver, options, multicallAddress),
+      providers: [
+        {
+          provide: MULTICALL_UNIT_PARAMS_DI_TOKEN,
+          useValue: { driver, options, multicallAddress },
+        },
+        {
+          provide: MulticallUnitService,
+          useFactory: (config) =>
+            new MulticallUnitService(
+              config.driver,
+              config.options,
+              config.multicallAddress
+            ),
+          inject: [MULTICALL_UNIT_PARAMS_DI_TOKEN],
+        },
+      ],
       exports: [MulticallUnitService],
     };
   }
@@ -28,7 +43,12 @@ export class MulticallModule {
   static forFeature(driver, options, multicallAddress) {
     return {
       module: MulticallModule,
-      providers: createMulticallProviders(driver, options, multicallAddress),
+      providers: [
+        {
+          provide: MulticallUnitService,
+          useValue: new MulticallUnitService(driver, options, multicallAddress),
+        },
+      ],
       exports: [MulticallUnitService],
     };
   }
