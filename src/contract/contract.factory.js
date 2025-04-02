@@ -23,12 +23,11 @@ export class ContractFactory {
   /**
    * Creates an automatic contract instance dynamically.
    *
-   * @template T
    * @param {import('ethers').Interface | import('ethers').InterfaceAbi} abi
    * @param {string} [address]
    * @param {import('ethers').Provider | import('ethers').Signer} [driver]
    * @param {import('ethers-tools').ContractOptions} [options]
-   * @returns {T}
+   * @returns {import('ethers-tools').DynamicContract}
    */
   createAuto(abi, address, driver, options) {
     return EthersToolsContract.createAutoInstance(abi, address, driver, options);
@@ -57,7 +56,7 @@ export class ContractFactory {
    * @param {string} [address]
    * @param {import('ethers').Provider | import('ethers').Signer} [driver]
    * @param {import('ethers-tools').ContractOptions} [options]
-   * @returns {new (args: DynamicContractConstructorArgs) => EthersToolsContract}
+   * @returns {new (args: DynamicContractConstructorArgs) => import('ethers-tools').DynamicContract}
    */
   createClassAuto(abi, address, driver, options) {
     return EthersToolsContract.createAutoClass(abi, address, driver, options);

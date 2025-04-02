@@ -40,7 +40,7 @@ pnpm add ethers-tools-nestjs
 
 ## ✨ Features
 
-- 🧩 `@Contract` decorator to turn a class into an `ethers-tools` **Contract** instance & *ContractFactory*
+- 🧩 `@Contract` decorator to turn a class into an `ethers-tools` **Contract** instance & _ContractFactory_
 - ⚡ `MulticallModule` with `MulticallUnitService` for performing efficient batch calls
 - ✅ NestJS-compatible and fully DI-friendly
 - 💡 Works with either global or per-module configuration

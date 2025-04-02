@@ -1,4 +1,6 @@
-import { Contract as EthersToolsContract } from 'ethers-tools';
+import { ContractFactory } from './contract.factory.js';
+
+const factory = new ContractFactory();
 
 /**
  * @param {import('ethers').Interface | import('ethers').InterfaceAbi} abi
@@ -9,10 +11,6 @@ import { Contract as EthersToolsContract } from 'ethers-tools';
  */
 export function Contract(abi, address, driver, options) {
   return function (_TargetClass) {
-    return class extends EthersToolsContract {
-      constructor(...args) {
-        super(abi, address, driver, options);
-      }
-    };
+    return factory.createClass(abi, address, driver, options);
   };
 }
