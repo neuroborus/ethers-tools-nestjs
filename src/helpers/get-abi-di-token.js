@@ -5,4 +5,4 @@
  */
 export const getAbiDIToken = (abi) => {
   return `Contract_${JSON.stringify(abi)}`;
-}
+};

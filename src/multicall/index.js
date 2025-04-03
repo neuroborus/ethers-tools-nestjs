@@ -1,2 +1,1 @@
-export * from './multicall-unit.module.js';
-export * from './multicall-unit.service.js';
+export * from './multicall-factory/index.js';
