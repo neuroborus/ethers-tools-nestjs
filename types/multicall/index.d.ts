@@ -1,2 +1,1 @@
-export * from './multicall-unit.module';
-export * from './multicall-unit.service';
+export * from './multicall-factory';
