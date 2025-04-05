@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/ethers-tools-nestjs.svg)](https://badge.fury.io/js/ethers-tools-nestjs)
 
-### [Click for Example](https://github.com/neuroborus/nest-template/tree/examples/ethers-tools-nestjs)
+### [Click for Example](https://github.com/neuroborus/nest-template/blob/examples/ethers-tools-nestjs/README.md)
 
 ## Description
 
@@ -71,6 +71,42 @@ export class ContractsModule {}
 constructor(
   @InjectContractFactory(Erc20Contract)
   private readonly token: ContractFactory<Erc20Contract>,
+) {}
+```
+
+#### 🤖 Auto Contract Factory
+
+You can register a contract factory without a manual contract creation using `createAutoContractFactoryProvider`:
+
+```typescript
+import { Module } from '@nestjs/common';
+import {
+  createAutoContractFactoryProvider,
+  createMulticallFactoryProvider,
+} from 'ethers-tools-nestjs';
+import { Erc721Abi } from '@/contracts/abis';
+import { NftService } from './nft.service';
+
+const multicallFactoryProvider = createMulticallFactoryProvider(
+  NftService.name,
+);
+const autoNftFactoryProvider = createAutoContractFactoryProvider(
+  NftService.name,
+  Erc721Abi,
+);
+
+@Module({
+  providers: [multicallFactoryProvider, autoNftFactoryProvider, NftService],
+  exports: [NftService],
+})
+export class NftModule {}
+
+```
+
+```typescript
+constructor(
+  @InjectAutoContractFactory(NftService.name)
+  private readonly nft: AutoContractFactory,
 ) {}
 ```
 

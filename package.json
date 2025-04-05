@@ -1,6 +1,6 @@
 {
   "name": "ethers-tools-nestjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NestJS wrapper for ethers-tools. Contains tools for work with EVM contracts.",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",

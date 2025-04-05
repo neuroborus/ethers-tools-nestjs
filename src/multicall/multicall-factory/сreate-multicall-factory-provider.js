@@ -1,5 +1,5 @@
 import { MulticallUnit } from 'ethers-tools';
-import { getMulticallFactoryToken } from './index.js';
+import { getMulticallFactoryToken } from './get-multicall-factory-token.js';
 
 /**
  * Registers a factory provider for the given contract class and ABI.
@@ -8,12 +8,12 @@ import { getMulticallFactoryToken } from './index.js';
  * with dynamic address, driver, and options.
  *
  * @template T
- * @param {string} name - Identifier
+ * @param {string | function} identifier - Identifier
  * @param {import('types/multicall').MulticallFactoryArguments} [args] - Prepared data
  * @returns {import('@nestjs/common').Provider} A NestJS provider object
  */
-export function createMulticallFactoryProvider(name, args) {
-  const token = getMulticallFactoryToken(name);
+export function createMulticallFactoryProvider(identifier, args) {
+  const token = getMulticallFactoryToken(identifier);
 
   return {
     provide: token,
