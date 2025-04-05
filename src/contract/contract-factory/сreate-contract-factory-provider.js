@@ -1,4 +1,4 @@
-import { getContractFactoryToken } from './index.js';
+import { getContractFactoryToken } from './get-contract-factory-token.js';
 
 /**
  * Registers a factory provider for the given contract class and ABI.
@@ -8,7 +8,7 @@ import { getContractFactoryToken } from './index.js';
  *
  * @template T
  * @param {typeof import('ethers-tools').Contract} ContractClass - The user-defined contract class
- * @param {import('types/contract').ContractFactoryArguments} args - Prepared data
+ * @param {import('types/contract').ContractFactoryArguments} [args] - Prepared data
  * @returns {import('@nestjs/common').Provider} A NestJS provider object
  */
 export function createContractFactoryProvider(ContractClass, args) {

@@ -18,5 +18,5 @@ export declare function createContractFactoryProvider<T extends Contract>(
     driver?: Signer | Provider,
     options?: any
   ) => T,
-  args: ContractFactoryArguments
+  args?: ContractFactoryArguments
 ): NestProvider;
